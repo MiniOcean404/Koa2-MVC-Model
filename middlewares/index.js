@@ -47,12 +47,14 @@ const mdBodyparser = bodyparser({
 const mdLogger = log()
 
 const mdJson = json()
-const mdView = views(__dirname + '/views', {
+const mdView = views(path.join(process.cwd(), '/views'), {
 	extension: 'pug',
 })
 
 // 按顺序排列好否则失效
 module.exports = [
+	mdJson,
+	mdView,
 	mdStatic,
 	mdFormidable,
 	mdBodyparser,
@@ -62,6 +64,4 @@ module.exports = [
 	mdErrorHandler,
 	mdRoute,
 	mdRouterAllowed,
-	mdJson,
-	mdView,
 ]
