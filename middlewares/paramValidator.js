@@ -1,33 +1,36 @@
-module.exports = paramSchema => {
-    return async function (ctx, next) {
-        let body = ctx.request.body;
-        try {
-            if (typeof body === 'string' && body.length) body = JSON.parse(body);
-        } catch (error) {}
-        const paramMap = {
-            router: ctx.request.params,
-            query: ctx.request.query,
-            body
-        };
+module.exports = (paramSchema) => {
+	return async function (ctx, next) {
+		let body = ctx.request.body
+		try {
+			if (typeof body === 'string' && body.length) body = JSON.parse(body)
+		} catch (err) {
+			console.error(err)
+		}
 
-        if (!paramSchema) return next();
+		const paramMap = {
+			router: ctx.request.params,
+			query: ctx.request.query,
+			body,
+		}
 
-        const schemaKeys = Object.getOwnPropertyNames(paramSchema);
-        if (!schemaKeys.length) return next();
+		if (!paramSchema) return next()
 
-        // eslint-disable-next-line array-callback-return
-        schemaKeys.some(item => {
-            const validObj = paramMap[item];
+		const schemaKeys = Object.getOwnPropertyNames(paramSchema)
+		if (!schemaKeys.length) return next()
 
-            const validResult = paramSchema[item].validate(validObj, {
-                allowUnknown: true
-            });
+		// eslint-disable-next-line array-callback-return
+		schemaKeys.some((item) => {
+			const validObj = paramMap[item]
 
-            if (validResult.error) {
-                ctx.utils.assert(false, ctx.utils.throwError(9998, validResult.error.message));
-            }
-        });
-        await next();
-    };
-};
+			const validResult = paramSchema[item].validate(validObj, {
+				allowUnknown: true,
+			})
 
+			if (validResult.error) {
+				ctx.utils.assert(false, ctx.utils.throwError(9998, validResult.error.message))
+			}
+		})
+
+		await next()
+	}
+}

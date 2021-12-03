@@ -9,7 +9,7 @@ const routes = [
 	{
 		//  测试
 		method: 'get',
-		path: '/a',
+		path: '/test',
 		controller: test.list,
 		valid: scmTest.list,
 	},
