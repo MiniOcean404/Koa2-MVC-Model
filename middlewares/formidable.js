@@ -1,13 +1,15 @@
 const formidable = require('formidable')
-
 const { tempFilePath } = require('../config')
+//上传binary类型文件需要设置content-type = octet-stream
 
 const form = formidable({
 	encoding: 'utf-8',
 	//  上传的临时文件保存路径
 	filename(name, ext, part, form) {
+		console.log('name:', name, '\r\next:', ext, '\r\npart:', part, '\r\nform:', form)
 		return `${name}${ext}`
 	},
+	defaultInvalidName: 'file',
 	multiples: true,
 	uploadDir: `${tempFilePath}`,
 	keepExtensions: true, // 保持原有后缀名
@@ -24,7 +26,10 @@ const form = formidable({
 
 module.exports = () => {
 	return async (ctx, next) => {
-		const upCondition = ctx.url && ctx.method.toLowerCase() === 'post' && ctx.request.type === 'multipart/form-data'
+		const upCondition =
+			ctx.url &&
+			ctx.method.toLowerCase() === 'post' &&
+			(ctx.request.type === 'multipart/form-data' || ctx.request.type === 'octet-stream')
 
 		if (upCondition) {
 			await new Promise((resolve, reject) => {
