@@ -1,8 +1,8 @@
 const response = () => {
 	return async (ctx, next) => {
-		ctx.res.fail = ({ code, data, msg }) => {
+		ctx.res.fail = ({ status, data, msg }) => {
 			ctx.body = {
-				code,
+				code: status,
 				data,
 				msg,
 			}

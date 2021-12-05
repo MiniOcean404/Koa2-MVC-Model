@@ -4,31 +4,26 @@ module.exports = (paramSchema) => {
 		try {
 			if (typeof body === 'string' && body.length) body = JSON.parse(body)
 		} catch (err) {
-			console.error(err)
+			console.error('参数校验中JSON解析失败:', err)
 		}
 
 		const paramMap = {
-			router: ctx.request.params,
-			query: ctx.request.query,
+			router: ctx.request.params, // 命名路由参数 例： '/:category/:title'
+			query: ctx.request.query, // GET请求参数解析
 			body,
 		}
 
-		if (!paramSchema) return next()
+		const schemaKeys = Object.getOwnPropertyNames(paramSchema || {})
+		if (!paramSchema || !schemaKeys.length) return next()
 
-		const schemaKeys = Object.getOwnPropertyNames(paramSchema)
-		if (!schemaKeys.length) return next()
+		schemaKeys.some((key) => {
+			const validObj = paramMap[key]
 
-		// eslint-disable-next-line array-callback-return
-		schemaKeys.some((item) => {
-			const validObj = paramMap[item]
-
-			const validResult = paramSchema[item].validate(validObj, {
+			const validResult = paramSchema[key].validate(validObj, {
 				allowUnknown: true,
 			})
 
-			if (validResult.error) {
-				ctx.utils.assert(false, ctx.utils.throwError(9998, validResult.error.message))
-			}
+			ctx.assert(!validResult.error, 400, validResult.error.message)
 		})
 
 		await next()

@@ -13,8 +13,7 @@ app.context.utils = utils
 app.use(compose(MD))
 
 app.on('error', (err, ctx) => {
-	console.error('服务器错误', err, ctx)
-
+	console.error('服务器错误\r\n', err, '\r\n当前上下文:\r\n', ctx)
 	if (ctx) {
 		ctx.body = {
 			code: 9999,
