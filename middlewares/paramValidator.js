@@ -16,7 +16,7 @@ module.exports = (paramSchema) => {
 				allowUnknown: true,
 			})
 
-			ctx.assert(!validResult.error, 400, validResult.error.message.replaceAll('"', ''))
+			ctx.assert(!validResult.error, 400, validResult.error?.message.replaceAll('"', ''))
 		})
 
 		await next()
