@@ -58,11 +58,8 @@ log4js.configure({
 			appenders: ['error'],
 			level: 'error',
 		},
-		response: {
-			appenders: ['fileAppender'],
-			level: 'info',
-		},
 	},
+	//若您的 app 使用了 pm2，则这里必须设置为true，否则日志将不会工作（另外您还得下载 pm2-intercom作为 pm2模块: pm2 install pm2-intercom）
 	pm2: true,
 })
 
@@ -77,6 +74,15 @@ let logger = loggerConfig()
 
 module.exports = {
 	loggerConfig,
+	useLogger: function (app, logger) {
+		//用来与express结合
+		app.use(
+			log4js.connectLogger(logger || log4js.getLogger('default'), {
+				level: levels['info'] || levels['debug'],
+				format: '[:remote-address :method :url :status :response-times][:referrer HTTP/:http-version :user-agent]', //自定义输出格式
+			}),
+		)
+	},
 	use: () => {
 		return async (ctx, next) => {
 			const { method, path, origin, query, body, headers, ip } = ctx.request
