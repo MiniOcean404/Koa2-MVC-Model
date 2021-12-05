@@ -44,7 +44,7 @@ const mdBodyparser = bodyparser({
 })
 
 // 记录请求日志
-const mdLogger = log()
+const mdLogger = log.use()
 
 const mdJson = json()
 const mdView = views(path.join(process.cwd(), '/views'), {
@@ -58,8 +58,8 @@ module.exports = [
 	mdStatic,
 	mdFormidable,
 	mdBodyparser,
-	mdCors,
 	mdLogger,
+	mdCors,
 	mdResHandler,
 	mdErrorHandler,
 	mdRoute,

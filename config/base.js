@@ -5,7 +5,7 @@ module.exports = {
 	tempFilePath: `${pwd}/public/temp`,
 	logConfig: {
 		flag: true, // 是否开启日志
-		outDir: `${pwd}/public/log`, // 日志输出目录
+		outDir: `${pwd}/log`, // 日志输出目录
 		level: 'info', // 日志等级
 	},
 }
