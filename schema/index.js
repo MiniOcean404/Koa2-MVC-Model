@@ -1,5 +1,4 @@
-const scmTest = require('./test');
-
 module.exports = {
-    scmTest
-};
+	scmTest: require('./test'),
+	scmLogin: require('./login'),
+}

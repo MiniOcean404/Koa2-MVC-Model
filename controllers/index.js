@@ -1,9 +1,9 @@
 const test = require('./test')
-const users = require('./users')
+const login = require('./login')
 const root = require('./root')
 
 module.exports = {
 	test,
-	users,
+	login,
 	root,
 }
