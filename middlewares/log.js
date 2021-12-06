@@ -83,35 +83,35 @@ module.exports = {
 			}),
 		)
 	},
-	use: () => {
-		return async (ctx, next) => {
-			const { method, path, origin, query, body, headers, ip } = ctx.request
-			const data = {
-				method,
-				path,
-				origin,
-				query,
-				body,
-				ip,
-				headers,
-			}
-
-			await next()
-
-			if (flag) {
-				const { status, params } = ctx
-				data.status = status
-				data.params = params
-				data.result = ctx.body || '没有内容'
-
-				if (ctx.body && ctx.body.code !== 0) {
-					logger.error(JSON.stringify(data))
-				} else {
-					logger.info(JSON.stringify(data))
-				}
-			}
-		}
-	},
+	// use: () => {
+	// 	return async (ctx, next) => {
+	// 		const { method, path, origin, query, body, headers, ip } = ctx.request
+	// 		const data = {
+	// 			method,
+	// 			path,
+	// 			origin,
+	// 			query,
+	// 			body,
+	// 			ip,
+	// 			headers,
+	// 		}
+	//
+	// 		await next()
+	//
+	// 		if (flag) {
+	// 			const { status, params } = ctx
+	// 			data.status = status
+	// 			data.params = params
+	// 			data.result = ctx.body || '没有内容'
+	//
+	// 			if (ctx.body && ctx.body.code !== 0) {
+	// 				logger.error(JSON.stringify(data))
+	// 			} else {
+	// 				logger.info(JSON.stringify(data))
+	// 			}
+	// 		}
+	// 	}
+	// },
 }
 
 // 通过 layout 我们可以自定义每一条输出日志的格式。

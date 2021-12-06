@@ -6,7 +6,7 @@ const router = require('../routes')
 const formidable = require('./formidable')
 const response = require('./response')
 const error = require('./error')
-const log = require('./log')
+const logger = require('./logger')
 const path = require('path')
 
 // 静态文件中间件
@@ -44,7 +44,7 @@ const mdBodyparser = bodyparser({
 })
 
 // 记录请求日志
-const mdLogger = log.use()
+const mdLogger = logger.use()
 
 const mdJson = json()
 const mdView = views(path.join(process.cwd(), '/views'), {
