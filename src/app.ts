@@ -2,7 +2,6 @@ import Koa from 'koa'
 const app = new Koa()
 
 import compose from 'koa-compose'
-import onerror from 'koa-onerror'
 import { createConnection } from 'typeorm'
 import 'reflect-metadata'
 import MD from './middlewares'
@@ -26,9 +25,6 @@ createConnection()
 				}
 			}
 		})
-
-		// error handler
-		onerror(app)
 	})
 	.catch((reason) => {
 		console.error('TypeORM 连接失败', reason)

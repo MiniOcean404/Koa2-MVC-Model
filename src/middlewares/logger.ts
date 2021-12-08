@@ -8,6 +8,7 @@ import { createLogger, format, transports, addColors } from 'winston'
 import 'winston-daily-rotate-file'
 
 import config from '../config'
+import type { Context, Next } from 'koa'
 
 const myCustomLevels = {
 	levels: {
@@ -87,7 +88,7 @@ const logger = createLogger({
 export default {
 	logger,
 	use: () => {
-		return async (ctx, next) => {
+		return async (ctx: Context, next: Next) => {
 			const { method, path, origin, query, body, headers, ip } = ctx.request
 			const data = {
 				method,
@@ -103,10 +104,14 @@ export default {
 
 			if (config.flag) {
 				const { status, params } = ctx
+				// @ts-ignore
 				data['status'] = status
+				// @ts-ignore
 				data['params'] = params
+				// @ts-ignore
 				data['result'] = ctx.body || '没有内容'
 
+				// @ts-ignore
 				if (ctx.body && ctx.body.code !== 0) {
 					logger.error(JSON.stringify(data))
 				} else {

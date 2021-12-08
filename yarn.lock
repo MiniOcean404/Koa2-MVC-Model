@@ -42,6 +42,17 @@
   dependencies:
     vary "^1.1.2"
 
+"@koa/router@^10.1.1":
+  version "10.1.1"
+  resolved "https://registry.nlark.com/@koa/router/download/@koa/router-10.1.1.tgz#8e5a85c9b243e0bc776802c0de564561e57a5f78"
+  integrity sha1-jlqFybJD4Lx3aALA3lZFYeV6X3g=
+  dependencies:
+    debug "^4.1.1"
+    http-errors "^1.7.3"
+    koa-compose "^4.1.0"
+    methods "^1.1.2"
+    path-to-regexp "^6.1.0"
+
 "@sideway/address@^4.1.3":
   version "4.1.3"
   resolved "https://registry.npmmirror.com/@sideway/address/download/@sideway/address-4.1.3.tgz#d93cce5d45c5daec92ad76db492cc2ee3c64ab27"
@@ -96,10 +107,180 @@
   resolved "https://registry.nlark.com/@tsconfig/node16/download/@tsconfig/node16-1.0.2.tgz#423c77877d0569db20e1fc80885ac4118314010e"
   integrity sha1-Qjx3h30Fadsg4fyAiFrEEYMUAQ4=
 
+"@types/accepts@*":
+  version "1.3.5"
+  resolved "https://registry.npmmirror.com/@types/accepts/download/@types/accepts-1.3.5.tgz#c34bec115cfc746e04fe5a059df4ce7e7b391575"
+  integrity sha1-w0vsEVz8dG4E/loFnfTOfns5FXU=
+  dependencies:
+    "@types/node" "*"
+
+"@types/body-parser@*":
+  version "1.19.2"
+  resolved "https://registry.npmmirror.com/@types/body-parser/download/@types/body-parser-1.19.2.tgz#aea2059e28b7658639081347ac4fab3de166e6f0"
+  integrity sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==
+  dependencies:
+    "@types/connect" "*"
+    "@types/node" "*"
+
+"@types/connect@*":
+  version "3.4.35"
+  resolved "https://registry.npmmirror.com/@types/connect/download/@types/connect-3.4.35.tgz#5fcf6ae445e4021d1fc2219a4873cc73a3bb2ad1"
+  integrity sha1-X89q5EXkAh0fwiGaSHPMc6O7KtE=
+  dependencies:
+    "@types/node" "*"
+
+"@types/content-disposition@*":
+  version "0.5.4"
+  resolved "https://registry.npmmirror.com/@types/content-disposition/download/@types/content-disposition-0.5.4.tgz#de48cf01c79c9f1560bcfd8ae43217ab028657f8"
+  integrity sha1-3kjPAcecnxVgvP2K5DIXqwKGV/g=
+
+"@types/cookies@*":
+  version "0.7.7"
+  resolved "https://registry.npmmirror.com/@types/cookies/download/@types/cookies-0.7.7.tgz#7a92453d1d16389c05a5301eef566f34946cfd81"
+  integrity sha1-epJFPR0WOJwFpTAe71ZvNJRs/YE=
+  dependencies:
+    "@types/connect" "*"
+    "@types/express" "*"
+    "@types/keygrip" "*"
+    "@types/node" "*"
+
+"@types/express-serve-static-core@^4.17.18":
+  version "4.17.26"
+  resolved "https://registry.npmmirror.com/@types/express-serve-static-core/download/@types/express-serve-static-core-4.17.26.tgz#5d9a8eeecb9d5f9d7fc1d85f541512a84638ae88"
+  integrity sha512-zeu3tpouA043RHxW0gzRxwCHchMgftE8GArRsvYT0ByDMbn19olQHx5jLue0LxWY6iYtXb7rXmuVtSkhy9YZvQ==
+  dependencies:
+    "@types/node" "*"
+    "@types/qs" "*"
+    "@types/range-parser" "*"
+
+"@types/express@*":
+  version "4.17.13"
+  resolved "https://registry.npmmirror.com/@types/express/download/@types/express-4.17.13.tgz#a76e2995728999bab51a33fabce1d705a3709034"
+  integrity sha1-p24plXKJmbq1GjP6vOHXBaNwkDQ=
+  dependencies:
+    "@types/body-parser" "*"
+    "@types/express-serve-static-core" "^4.17.18"
+    "@types/qs" "*"
+    "@types/serve-static" "*"
+
+"@types/formidable@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.npmmirror.com/@types/formidable/download/@types/formidable-2.0.0.tgz#7100d6121871c6300e16c89cf4002f3b66157359"
+  integrity sha1-cQDWEhhxxjAOFsic9AAvO2YVc1k=
+  dependencies:
+    "@types/node" "*"
+
+"@types/http-assert@*":
+  version "1.5.3"
+  resolved "https://registry.npmmirror.com/@types/http-assert/download/@types/http-assert-1.5.3.tgz#ef8e3d1a8d46c387f04ab0f2e8ab8cb0c5078661"
+  integrity sha1-7449Go1Gw4fwSrDy6KuMsMUHhmE=
+
+"@types/http-errors@*":
+  version "1.8.1"
+  resolved "https://registry.npmmirror.com/@types/http-errors/download/@types/http-errors-1.8.1.tgz#e81ad28a60bee0328c6d2384e029aec626f1ae67"
+  integrity sha1-6BrSimC+4DKMbSOE4Cmuxibxrmc=
+
+"@types/keygrip@*":
+  version "1.0.2"
+  resolved "https://registry.npmmirror.com/@types/keygrip/download/@types/keygrip-1.0.2.tgz#513abfd256d7ad0bf1ee1873606317b33b1b2a72"
+  integrity sha1-UTq/0lbXrQvx7hhzYGMXszsbKnI=
+
+"@types/koa-bodyparser@^4.3.4":
+  version "4.3.4"
+  resolved "https://registry.npmmirror.com/@types/koa-bodyparser/download/@types/koa-bodyparser-4.3.4.tgz#86aca8ba2ac5896f84386f52cf02eb06563e2539"
+  integrity sha512-eNyHGkIxwJKYaZhyxzAVP3taZVWNgAw+Gzl1Zc9vdkfzoBjypTANLwOAb6tC2hGOXS5uw4O08N6jaL6MdrltqQ==
+  dependencies:
+    "@types/koa" "*"
+
+"@types/koa-compose@*":
+  version "3.2.5"
+  resolved "https://registry.npmmirror.com/@types/koa-compose/download/@types/koa-compose-3.2.5.tgz#85eb2e80ac50be95f37ccf8c407c09bbe3468e9d"
+  integrity sha1-hesugKxQvpXzfM+MQHwJu+NGjp0=
+  dependencies:
+    "@types/koa" "*"
+
+"@types/koa-json@^2.0.20":
+  version "2.0.20"
+  resolved "https://registry.npmmirror.com/@types/koa-json/download/@types/koa-json-2.0.20.tgz#6cc67556501f490a6165a2fff0859aff7d316619"
+  integrity sha1-bMZ1VlAfSQphZaL/8IWa/30xZhk=
+  dependencies:
+    "@types/koa" "*"
+
+"@types/koa-send@*":
+  version "4.1.3"
+  resolved "https://registry.npmmirror.com/@types/koa-send/download/@types/koa-send-4.1.3.tgz#17193c6472ae9e5d1b99ae8086949cc4fd69179d"
+  integrity sha1-Fxk8ZHKunl0bma6AhpScxP1pF50=
+  dependencies:
+    "@types/koa" "*"
+
+"@types/koa-static@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.npmmirror.com/@types/koa-static/download/@types/koa-static-4.0.2.tgz#a199d2d64d2930755eb3ea370aeaf2cb6f501d67"
+  integrity sha1-oZnS1k0pMHVes+o3Curyy29QHWc=
+  dependencies:
+    "@types/koa" "*"
+    "@types/koa-send" "*"
+
+"@types/koa@*":
+  version "2.13.4"
+  resolved "https://registry.npmmirror.com/@types/koa/download/@types/koa-2.13.4.tgz#10620b3f24a8027ef5cbae88b393d1b31205726b"
+  integrity sha1-EGILPySoAn71y66Is5PRsxIFcms=
+  dependencies:
+    "@types/accepts" "*"
+    "@types/content-disposition" "*"
+    "@types/cookies" "*"
+    "@types/http-assert" "*"
+    "@types/http-errors" "*"
+    "@types/keygrip" "*"
+    "@types/koa-compose" "*"
+    "@types/node" "*"
+
+"@types/koa__cors@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.npmmirror.com/@types/koa__cors/download/@types/koa__cors-3.0.3.tgz#49d75813b443ba3d4da28ea6cf6244b7e99a3b23"
+  integrity sha1-SddYE7RDuj1Noo6mz2JEt+maOyM=
+  dependencies:
+    "@types/koa" "*"
+
+"@types/koa__router@^8.0.11":
+  version "8.0.11"
+  resolved "https://registry.npmmirror.com/@types/koa__router/download/@types/koa__router-8.0.11.tgz#d7b37e6db934fc072ea1baa2ab92bc8ac4564f3e"
+  integrity sha512-WXgKWpBsbS14kzmzD9LeFapOIa678h7zvUHxDwXwSx4ETKXhXLVUAToX6jZ/U7EihM7qwyD9W/BZvB0MRu7MTQ==
+  dependencies:
+    "@types/koa" "*"
+
+"@types/mime@^1":
+  version "1.3.2"
+  resolved "https://registry.npmmirror.com/@types/mime/download/@types/mime-1.3.2.tgz#93e25bf9ee75fe0fd80b594bc4feb0e862111b5a"
+  integrity sha1-k+Jb+e51/g/YC1lLxP6w6GIRG1o=
+
+"@types/node@*":
+  version "16.11.12"
+  resolved "https://registry.npmmirror.com/@types/node/download/@types/node-16.11.12.tgz#ac7fb693ac587ee182c3780c26eb65546a1a3c10"
+  integrity sha512-+2Iggwg7PxoO5Kyhvsq9VarmPbIelXP070HMImEpbtGCoyWNINQj4wzjbQCXzdHTRXnqufutJb5KAURZANNBAw==
+
 "@types/node@^16.11.11":
   version "16.11.11"
   resolved "https://registry.npmmirror.com/@types/node/download/@types/node-16.11.11.tgz#6ea7342dfb379ea1210835bada87b3c512120234"
   integrity sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==
+
+"@types/qs@*":
+  version "6.9.7"
+  resolved "https://registry.npmmirror.com/@types/qs/download/@types/qs-6.9.7.tgz#63bb7d067db107cc1e457c303bc25d511febf6cb"
+  integrity sha1-Y7t9Bn2xB8weRXwwO8JdUR/r9ss=
+
+"@types/range-parser@*":
+  version "1.2.4"
+  resolved "https://registry.npmmirror.com/@types/range-parser/download/@types/range-parser-1.2.4.tgz#cd667bcfdd025213aafb7ca5915a932590acdcdc"
+  integrity sha1-zWZ7z90CUhOq+3ylkVqTJZCs3Nw=
+
+"@types/serve-static@*":
+  version "1.13.10"
+  resolved "https://registry.npmmirror.com/@types/serve-static/download/@types/serve-static-1.13.10.tgz?cache=0&sync_timestamp=1637272145751&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fserve-static%2Fdownload%2F%40types%2Fserve-static-1.13.10.tgz#f5e0ce8797d2d7cc5ebeda48a52c96c4fa47a8d9"
+  integrity sha1-9eDOh5fS18xevtpIpSyWxPpHqNk=
+  dependencies:
+    "@types/mime" "^1"
+    "@types/node" "*"
 
 "@types/zen-observable@0.8.3":
   version "0.8.3"
@@ -1069,17 +1250,6 @@ koa-onerror@^4.1.0:
   dependencies:
     escape-html "^1.0.3"
     stream-wormhole "^1.1.0"
-
-koa-router@^10.1.1:
-  version "10.1.1"
-  resolved "https://registry.nlark.com/koa-router/download/koa-router-10.1.1.tgz?cache=0&sync_timestamp=1629649079221&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fkoa-router%2Fdownload%2Fkoa-router-10.1.1.tgz#20809f82648518b84726cd445037813cd99f17ff"
-  integrity sha1-IICfgmSFGLhHJs1EUDeBPNmfF/8=
-  dependencies:
-    debug "^4.1.1"
-    http-errors "^1.7.3"
-    koa-compose "^4.1.0"
-    methods "^1.1.2"
-    path-to-regexp "^6.1.0"
 
 koa-send@^5.0.0:
   version "5.0.1"

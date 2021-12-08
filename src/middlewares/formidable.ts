@@ -1,5 +1,6 @@
 import formidable from 'formidable'
 import tempFilePath from '../config'
+import type { Context, Next } from 'koa'
 //上传binary类型文件需要设置content-type = octet-stream
 
 const form = formidable({
@@ -9,7 +10,7 @@ const form = formidable({
 	filename(name, ext, part, form) {
 		return `${name}${ext}`
 	},
-	defaultInvalidName: 'file',
+	// defaultInvalidName: 'file',
 	multiples: true,
 	uploadDir: `${tempFilePath}`,
 	keepExtensions: true, // 保持原有后缀名
@@ -26,7 +27,7 @@ const form = formidable({
 })
 
 export default () => {
-	return async (ctx, next) => {
+	return async (ctx: Context, next: Next) => {
 		const upCondition =
 			ctx.url &&
 			ctx.method.toLowerCase() === 'post' &&
@@ -38,6 +39,7 @@ export default () => {
 					if (err) reject(err)
 
 					ctx.request.body = fields
+					// @ts-ignore
 					ctx.request.files = files
 
 					resolve()
@@ -49,7 +51,9 @@ export default () => {
 
 		if (upCondition) {
 			let obj = {}
+			// @ts-ignore
 			for (const [key, value] of Object.entries(ctx.request.files)) {
+				// @ts-ignore
 				obj[key] = value
 			}
 

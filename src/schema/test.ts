@@ -1,7 +1,8 @@
 // https://joi.dev/api/?v=17.5.0 文档
 import Joi from 'joi'
+import { Condition } from '@/types/valid'
 
-const scmTest = {
+const scmTest: Condition = {
 	query: Joi.object({
 		name: Joi.string().required(),
 		age: Joi.string().alphanum().min(3).max(30).required(),

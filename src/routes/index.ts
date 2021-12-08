@@ -1,12 +1,14 @@
-import KoaRouter from 'koa-router'
-const router = KoaRouter()
-import routeList from './routes'
+import { test, login, root } from '../controllers'
+import { scmTest, scmLogin } from '../schema'
 import paramValidator from '../middlewares/paramValidator'
+import KoaRouter from '@koa/router'
 
-routeList.forEach((route) => {
-	const { method, path, controller, valid } = route
-	//  router 第一个参数是 path， 后面跟上路由级中间件 controller（上面编写的路由处理函数），valid被校验的参数
-	router[method.toLowerCase()](path, paramValidator(valid), controller)
-})
+// router.prefix('/users')
+const router = new KoaRouter()
+
+router.get('/', root.helloKoa)
+router.get('/test', paramValidator(scmTest), test.list)
+
+router.post('/login', paramValidator(scmLogin), login.login)
 
 export default router

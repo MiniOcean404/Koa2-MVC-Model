@@ -1,4 +1,6 @@
-const helloKoa = async (ctx) => {
+import { Context } from 'koa'
+
+const helloKoa = async (ctx: Context) => {
 	// 没有处理返回数据时：JSON形式返回的写法
 	//   ctx.body = {
 	//   title: 'koa2 json'

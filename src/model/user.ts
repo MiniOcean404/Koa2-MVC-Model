@@ -3,20 +3,20 @@ import { Entity, Column } from 'typeorm'
 @Entity()
 export class Photo {
 	@Column()
-	id: number
+	id: number | undefined
 
 	@Column()
-	name: string
+	name: string | undefined
 
 	@Column()
-	description: string
+	description: string | undefined
 
 	@Column()
-	filename: string
+	filename: string | undefined
 
 	@Column()
-	views: number
+	views: number | undefined
 
 	@Column()
-	isPublished: boolean
+	isPublished: boolean | undefined
 }
