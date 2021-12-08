@@ -1,6 +1,5 @@
 import Koa from 'koa'
 const app = new Koa()
-
 import compose from 'koa-compose'
 import { createConnection } from 'typeorm'
 import 'reflect-metadata'

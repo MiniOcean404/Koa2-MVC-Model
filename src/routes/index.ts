@@ -8,7 +8,6 @@ const router = new KoaRouter()
 
 router.get('/', root.helloKoa)
 router.get('/test', paramValidator(scmTest), test.list)
-
 router.post('/login', paramValidator(scmLogin), login.login)
 
 export default router

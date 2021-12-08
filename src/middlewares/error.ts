@@ -5,7 +5,6 @@ export default () => {
 		try {
 			await next()
 			if (ctx.status >= 200 && ctx.status < 300) {
-				// @ts-ignore
 				ctx.res.success()
 			}
 		} catch (err) {
