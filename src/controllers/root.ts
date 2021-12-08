@@ -9,7 +9,7 @@ const helloKoa = async (ctx) => {
 	// ctx.assert(name, 10001, 'name 是必须的')
 	// ctx.assert(age, 10001, 'age 是必须的')
 
-	await ctx.render('index', { title: 'Koa2' })
+	ctx.body = '首页'
 }
 
 export = {

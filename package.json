@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nodemon --watch src --exec ts-node bin/www.ts",
-    "prd": "pm2 start bin/www.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prd": "pm2 start bin/www.ts"
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",
@@ -17,9 +16,7 @@
     "koa-json": "^2.0.2",
     "koa-onerror": "^4.1.0",
     "koa-router": "^10.1.1",
-    "koa-static": "^5.0.0",
-    "koa-views": "^6.2.0",
-    "pug": "^2.0.3"
+    "koa-static": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^16.11.11",

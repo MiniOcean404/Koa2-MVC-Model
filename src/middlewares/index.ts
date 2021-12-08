@@ -1,7 +1,6 @@
 import cors from '@koa/cors'
 import bodyparser from 'koa-bodyparser'
 import json from 'koa-json'
-import views from 'koa-views'
 import router from '../routes'
 import formidable from './formidable'
 import response from './response'
@@ -48,14 +47,10 @@ const mdBodyparser = bodyparser({
 const mdLogger = logger.use()
 
 const mdJson = json()
-const mdView = views(path.join(process.cwd(), '/views'), {
-	extension: 'pug',
-})
 
 // 按顺序排列好否则失效
 export = [
 	mdJson,
-	mdView,
 	mdStatic,
 	mdFormidable,
 	mdBodyparser,
