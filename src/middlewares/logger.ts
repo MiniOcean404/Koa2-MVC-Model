@@ -51,8 +51,6 @@ const defaultOptions = {
 addColors(myCustomLevels.colors)
 
 // 可以创建多个日志打印器
-// @ts-ignore
-// @ts-ignore
 const logger = createLogger({
 	level: 'info',
 	levels: myCustomLevels.levels,
@@ -98,21 +96,21 @@ export default {
 				body,
 				ip,
 				headers,
+				status: 0,
+				params: '',
+				result: '',
 			}
 
 			await next()
 
 			if (config.flag) {
+				const body: any = ctx.body
 				const { status, params } = ctx
-				// @ts-ignore
 				data['status'] = status
-				// @ts-ignore
 				data['params'] = params
-				// @ts-ignore
-				data['result'] = ctx.body || '没有内容'
+				data['result'] = body || '没有内容'
 
-				// @ts-ignore
-				if (ctx.body && ctx.body.code !== 0) {
+				if (ctx.body && body.code !== 0) {
 					logger.error(JSON.stringify(data))
 				} else {
 					logger.info(JSON.stringify(data))

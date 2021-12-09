@@ -2,7 +2,6 @@ import type { Context, Next } from 'koa'
 
 export default () => {
 	return async (ctx: Context, next: Next) => {
-		// @ts-ignore
 		ctx.res.fail = ({ status, data, msg }) => {
 			ctx.body = {
 				code: status,
@@ -11,7 +10,6 @@ export default () => {
 			}
 		}
 
-		// @ts-ignore
 		ctx.res.success = (msg) => {
 			ctx.body = {
 				code: 0,

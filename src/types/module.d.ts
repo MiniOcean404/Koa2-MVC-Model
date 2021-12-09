@@ -1,4 +1,5 @@
 import * as Koa from 'koa'
+import { Files } from 'formidable'
 
 declare module 'koa' {
 	class ServerResponse {
@@ -7,7 +8,6 @@ declare module 'koa' {
 	}
 
 	interface Request {
-		body?: any
-		rawBody: string
+		files: Files
 	}
 }

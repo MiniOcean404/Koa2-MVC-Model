@@ -2,10 +2,8 @@ import assert from 'assert'
 
 // 当前做法等于Koa中ctx.throw([status], [msg], [properties])
 export const throwError = (code: any, message: string | undefined) => {
-	const err = new Error(message)
-	// @ts-ignore
+	const err: any = new Error(message)
 	err['status'] = code
-	// @ts-ignore
 	err['expose'] = true
 	throw err
 }
