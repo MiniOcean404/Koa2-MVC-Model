@@ -16,4 +16,4 @@ const pathConfig = {
 	Temp_File_Path: resolve(Temp_File_Path),
 }
 
-export default pathConfig
+export default Object.assign({ NODE_ENV }, dotenvConfig, pathConfig)
