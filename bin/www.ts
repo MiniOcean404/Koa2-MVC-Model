@@ -37,11 +37,11 @@ function onError(error: { syscall: string; code: string }) {
 	// handle specific listen errors with friendly messages
 	switch (error.code) {
 		case 'EACCES':
-			console.error(bind + ' requires elevated privileges')
+			console.error(bind + ' 需要提升权限')
 			process.exit(1)
 			break
 		case 'EADDRINUSE':
-			console.error(bind + ' is already in use')
+			console.error(bind + ' 已在使用中')
 			process.exit(1)
 			break
 		default:

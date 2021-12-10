@@ -5,16 +5,16 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 export class User {
 	// 则是装饰主列，它的值将自动生成
 	@PrimaryGeneratedColumn()
-	id: number | undefined
+	id?: number
 
 	//于装饰类的某个属性，使其对应于数据库表中的一列，可提供一系列选项参数
 	@Column()
-	name: string | undefined
+	name?: string
 
 	//password 设置了 select: false ，使得这个字段在查询时默认不被选中
 	@Column({ select: false })
-	password: string | undefined
+	password?: string
 
 	@Column()
-	email: string | undefined
+	email?: string
 }
