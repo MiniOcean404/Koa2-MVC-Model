@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { get_local_ip } from '../src/common/utils'
+import { get_local_ip } from '@/common/utils'
 import http from 'http'
 import app from '../src/app'
 

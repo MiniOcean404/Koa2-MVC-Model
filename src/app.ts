@@ -5,7 +5,7 @@ import { createConnection } from 'typeorm'
 import 'reflect-metadata'
 import MD from './middlewares'
 import config from './config'
-import * as utils from '@/common/utils'
+import * as utils from './common/utils'
 
 createConnection()
 	.then(() => {

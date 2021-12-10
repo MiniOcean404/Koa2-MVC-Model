@@ -3,7 +3,9 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "nodemon --watch src --exec ts-node --project ./tsconfig.json bin/www.ts",
+		"start": "ts-node --project ./tsconfig.json  bin/www.ts",
+		"dev": "nodemon --watch src --exec ts-node --project ./tsconfig.json --type-check bin/www.ts",
+		"build": "tsc --project ./",
 		"prd": "pm2 start bin/www.ts"
 	},
 	"dependencies": {
