@@ -1,5 +1,5 @@
 import formidable from 'formidable'
-import tempFilePath from '../config'
+import config from '../config'
 import type { Context, Next } from 'koa'
 import { ResponseBody } from '@/types/logger'
 //上传binary类型文件需要设置content-type = octet-stream
@@ -13,7 +13,7 @@ const form = formidable({
 	},
 	// defaultInvalidName: 'file',
 	multiples: true,
-	uploadDir: `${tempFilePath}`,
+	uploadDir: `${config.Temp_File_Path}`,
 	keepExtensions: true, // 保持原有后缀名
 	minFileSize: 1, // byte
 	maxFileSize: 200 * 1024 * 1024,
@@ -42,7 +42,7 @@ export default () => {
 					ctx.request.body = fields
 					ctx.request.files = files
 
-					resolve() 
+					resolve()
 				})
 			})
 		}

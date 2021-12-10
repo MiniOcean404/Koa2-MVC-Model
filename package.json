@@ -29,6 +29,7 @@
 		"@types/koa__cors": "^3.0.3",
 		"@types/koa__router": "^8.0.11",
 		"@types/node": "^16.11.11",
+		"dotenv": "^10.0.0",
 		"formidable": "^2.0.1",
 		"joi": "^17.5.0",
 		"jsonwebtoken": "^8.5.1",

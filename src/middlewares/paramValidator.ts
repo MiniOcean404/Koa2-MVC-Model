@@ -1,6 +1,6 @@
 import { ObjectSchema, ValidationResult } from 'joi'
 import type { Context, Next } from 'koa'
-import { Condition, Params } from '../types/valid'
+import { Condition, Params } from '@/types/valid'
 
 export default (paramSchema: Condition) => {
 	return async function (ctx: Context, next: Next) {

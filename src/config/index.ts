@@ -1,14 +1,19 @@
-const base = require('./base')
-const dev = require('./dev')
-const pre = require('./pre')
-const pro = require('./pro')
+import { resolve } from '@/common/path'
+import dotenv from 'dotenv'
 
-const env: string = process.env['NODE_ENV'] || 'dev'
+const cwd = process.cwd()
+const NODE_ENV: string = process.env.NODE_ENV || 'development'
 
-const configMap = {
-	dev,
-	pre,
-	pro,
+const getDotEnv = () => {
+	const path = resolve(`../.env.${NODE_ENV}`)
+	return dotenv.config({ path }).parsed || {}
 }
 
-export default Object.assign(base, { env }, (configMap as any).env)
+const dotenvConfig = getDotEnv()
+
+const pathConfig = {
+	LOG_OUT_DIR: cwd + dotenvConfig.LOG_OUT_DIR,
+	Temp_File_Path: cwd + dotenvConfig.Temp_File_Path,
+}
+
+export default Object.assign({ NODE_ENV }, dotenvConfig, pathConfig)

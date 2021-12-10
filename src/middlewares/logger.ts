@@ -33,7 +33,7 @@ const myCustomLevels = {
 
 const customFormat = format.combine(
 	format.json(),
-	format.label({ label: `当前环境:${[config.env]}` }),
+	format.label({ label: `当前环境:${[config.NODE_ENV]}` }),
 	format.timestamp({ format: 'MM-DD-YYYY HH:mm:ss' }),
 	format.align(),
 	format.printf((info) => `[${info.level}] \r\n时间：${[info['timestamp']]}\r\n载体:${info.message}`),
@@ -55,7 +55,7 @@ const logger = createLogger({
 	level: 'info',
 	levels: myCustomLevels.levels,
 	format: customFormat,
-	silent: !config.flag, // 是否禁用所有日志
+	silent: !config.LOG_FLAG, // 是否禁用所有日志
 	transports: [
 		new transports.Console({
 			level: 'info',
@@ -103,7 +103,7 @@ export default {
 
 			await next()
 
-			if (config.flag) {
+			if (config.LOG_FLAG) {
 				const body: any = ctx.body
 				const { status, params } = ctx
 				data['status'] = status
