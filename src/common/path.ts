@@ -1,5 +1,5 @@
 import path from 'path'
 
-const resolve = (dir: string | undefined) => path.join(__dirname, '../', dir ? dir : '')
+const resolve = (dir: string | undefined) => path.join(process.cwd(), dir ? dir : '')
 
 export { resolve }
