@@ -1,5 +1,5 @@
-import test from './test'
+import Test from './test'
 import login from './login'
-import root from './root'
+import Root from './root'
 
-export { test, login, root }
+export { Test, login, Root }

@@ -1,9 +1,7 @@
 import { Context } from 'koa'
 
-const list = async (ctx: Context) => {
-	ctx.body = '你好'
-}
-
-export = {
-	list,
+export default class Test {
+	public static async helloKoa(ctx: Context) {
+		ctx.body = '你好'
+	}
 }

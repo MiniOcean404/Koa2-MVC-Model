@@ -21,4 +21,5 @@ declare namespace valid {
 
 	type ParamsItem = keyof Params & keyof Condition
 }
+
 export = valid

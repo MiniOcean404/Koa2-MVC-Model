@@ -1,9 +1,8 @@
 import { Context } from 'koa'
+import { getManager } from 'typeorm'
 
-const login = async (ctx: Context) => {
-	ctx.body = '返回结果'
-}
-
-export = {
-	login,
+export default class Login {
+	public static async login(ctx: Context) {
+		ctx.body = '返回结果'
+	}
 }

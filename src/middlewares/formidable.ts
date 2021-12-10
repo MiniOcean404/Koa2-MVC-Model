@@ -1,7 +1,7 @@
 import formidable from 'formidable'
 import tempFilePath from '../config'
 import type { Context, Next } from 'koa'
-import { ResponseBody } from '../types/logger'
+import { ResponseBody } from '@/types/logger'
 //上传binary类型文件需要设置content-type = octet-stream
 
 const form = formidable({
@@ -42,7 +42,7 @@ export default () => {
 					ctx.request.body = fields
 					ctx.request.files = files
 
-					resolve()
+					resolve() 
 				})
 			})
 		}

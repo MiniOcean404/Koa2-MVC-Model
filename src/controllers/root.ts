@@ -1,19 +1,17 @@
 import { Context } from 'koa'
 
-const helloKoa = async (ctx: Context) => {
-	// 没有处理返回数据时：JSON形式返回的写法
-	//   ctx.body = {
-	//   title: 'koa2 json'
-	// }
+export default class Root {
+	public static async helloKoa(ctx: Context) {
+		// 没有处理返回数据时：JSON形式返回的写法
+		//   ctx.body = {
+		//   title: 'koa2 json'
+		// }
 
-	// 没有参数校验中间件时：参数校验写法
-	// const { name, age } = ctx.request.query
-	// ctx.assert(name, 10001, 'name 是必须的')
-	// ctx.assert(age, 10001, 'age 是必须的')
+		// 没有参数校验中间件时：参数校验写法
+		// const { name, age } = ctx.request.query
+		// ctx.assert(name, 10001, 'name 是必须的')
+		// ctx.assert(age, 10001, 'age 是必须的')
 
-	ctx.body = '首页'
-}
-
-export = {
-	helloKoa,
+		ctx.body = '首页'
+	}
 }

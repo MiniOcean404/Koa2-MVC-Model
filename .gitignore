@@ -1,4 +1,6 @@
 /node_modules/
-.idea
 logs/
 temp/
+/build
+/dist
+/.idea/
