@@ -6,7 +6,6 @@ import 'reflect-metadata'
 import MD from './middlewares'
 import config from './config'
 import * as utils from './common/utils'
-import util, { inspect } from 'util'
 
 app.context.config = config
 app.context.utils = utils

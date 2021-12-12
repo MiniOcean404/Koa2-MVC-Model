@@ -12,8 +12,8 @@ module.exports = {
 	logging: false,
 	multipleStatements: true,
 	dropSchema: false,
-	entities: ['src/model/*.{ts,js}'],
+	entities: ['dist/src/model/*.{ts,js}'],
 	cli: {
-		entitiesDir: './src/model',
+		entitiesDir: 'dist/src/model',
 	},
 }
