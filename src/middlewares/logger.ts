@@ -79,8 +79,8 @@ const logger = createLogger({
 		}),
 	],
 	// exitOnError:false //异常时候是否退出 false 退出 默认为 true
-	exceptionHandlers: [new transports.File({ filename: 'logs/exception/exceptions.log' })],
-	// rejectionHandlers: [new transports.File({ filename: 'logs/promise/reject.log' })], //处理未经批准的拒绝承诺
+	exceptionHandlers: [new transports.File({ filename: 'logs/other/exceptions.log' })],
+	// rejectionHandlers: [new transports.File({ filename: 'logs/other/reject.log' })], //处理未经批准的拒绝承诺
 })
 
 export default {
