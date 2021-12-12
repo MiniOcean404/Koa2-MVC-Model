@@ -3,8 +3,6 @@ import dotenv from 'dotenv'
 
 const NODE_ENV: string = process.env.NODE_ENV || 'development'
 
-console.log(process.env.NODE_ENV)
-
 const getDotEnv = () => {
 	const path = resolve(`.env.${NODE_ENV}`)
 	return dotenv.config({ path }).parsed || {}

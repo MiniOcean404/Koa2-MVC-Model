@@ -34,7 +34,6 @@ function onError(error: { syscall: string; code: string }) {
 
 	const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port
 
-	// handle specific listen errors with friendly messages
 	switch (error.code) {
 		case 'EACCES':
 			console.error(bind + ' 需要提升权限')

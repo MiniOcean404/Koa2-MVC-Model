@@ -10,7 +10,7 @@ declare module 'koa' {
 
 declare module 'http' {
 	interface ServerResponse {
-		success: (msg?: string | undefined) => void
+		success: (code: number, msg?: string | undefined) => void
 		fail: (option: any) => void
 	}
 }

@@ -33,7 +33,7 @@ const myCustomLevels = {
 
 const customFormat = format.combine(
 	format.json(),
-	format.label({ label: `当前环境:${[config.NODE_ENV]}` }),
+	format.label({ label: `运行环境:${[config.NODE_ENV]}` }),
 	format.timestamp({ format: 'MM-DD-YYYY HH:mm:ss' }),
 	format.align(),
 	format.printf((info) => `[${info.level}] \r\n时间：${[info['timestamp']]}\r\n载体:${info.message}`),
@@ -87,33 +87,41 @@ export default {
 	logger,
 	use: () => {
 		return async (ctx: Context, next: Next) => {
-			const { method, path, origin, query, body, headers, ip } = ctx.request
-			const data = {
-				method,
-				path,
-				origin,
-				query,
-				body,
-				ip,
-				headers,
-				status: 0,
-				params: '',
-				result: '',
-			}
-
 			await next()
 
-			if (config.LOG_FLAG) {
-				const body: any = ctx.body
-				const { status, params } = ctx
-				data['status'] = status
-				data['params'] = params
-				data['result'] = body || '没有内容'
+			if (ctx.request.path === '/favicon.ico') return
 
-				if (ctx.body && body.code !== 0) {
+			if (config.LOG_FLAG) {
+				const { method, path, origin, query, body, headers, ip } = ctx.request
+				const data = {
+					request: {
+						method,
+						path,
+						origin,
+						query,
+						body,
+						ip,
+						headers,
+					},
+					response: {
+						status: 0,
+						params: '',
+						result: '',
+					},
+				}
+
+				const resBody: any = ctx.body
+				const { status, params } = ctx
+				data.response.status = status
+				data.response.params = params
+				data.response.result = resBody || '没有内容'
+
+				if (ctx.status >= 100 && ctx.status < 400) {
+					logger.info(JSON.stringify(data))
+				} else if (resBody && ctx.status >= 400 && ctx.status <= 511) {
 					logger.error(JSON.stringify(data))
 				} else {
-					logger.info(JSON.stringify(data))
+					logger.error('未捕获到的错误' + JSON.stringify(data))
 				}
 			}
 		}
