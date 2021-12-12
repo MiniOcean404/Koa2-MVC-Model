@@ -3,10 +3,9 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"start": "ts-node --project ./tsconfig.json  bin/www.ts",
 		"dev": "nodemon --watch src --watch bin -e ts --exec ts-node --project ./tsconfig.json bin/www.ts",
 		"build": "tsc --project ./",
-		"prd": "pm2 start bin/www.ts"
+		"prd": "pm2 start dist/bin/www.js --watch -i max -n Koa2"
 	},
 	"dependencies": {
 		"@koa/cors": "^3.1.0",

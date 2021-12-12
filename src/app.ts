@@ -6,6 +6,7 @@ import 'reflect-metadata'
 import MD from './middlewares'
 import config from './config'
 import * as utils from './common/utils'
+import util, { inspect } from 'util'
 
 app.context.config = config
 app.context.utils = utils
@@ -25,7 +26,7 @@ app.on('error', (err, ctx) => {
 
 createConnection()
 	.then(() => {
-		process.stderr.write('\x1B[34mTypeORM 连接成功\x1B[39m\r\n')
+		process.stderr.write('\x1B[34m TypeORM 连接成功 \x1B[39m\r\n')
 	})
 	.catch((reason) => {
 		console.error('\x1B[31m%s\x1B[39m', reason, '\r\n')
