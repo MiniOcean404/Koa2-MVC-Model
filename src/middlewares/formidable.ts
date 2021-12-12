@@ -8,9 +8,9 @@ const form = formidable({
 	encoding: 'utf-8',
 	//  上传的临时文件保存路径
 	// @ts-ignore
-	filename(name, ext, part, form) {
-		return `${name}${ext}`
-	},
+	// filename(name, ext, part, form) {
+	// 	return `${name}${ext}`
+	// },
 	// defaultInvalidName: 'file',
 	multiples: true,
 	uploadDir: `${config.Temp_File_Path}`,

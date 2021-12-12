@@ -3,9 +3,9 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "nodemon --watch src --watch bin -e ts --exec ts-node --project ./tsconfig.json bin/www.ts",
+		"dev": "set NODE_ENV=development&& nodemon --watch src --watch bin -e ts --exec  ts-node --project ./tsconfig.json bin/www.ts",
 		"build": "ttsc --project ./",
-		"start-prd": "node dist/bin/www.js",
+		"start-prd": "set NODE_ENV=production&& node dist/bin/www.js",
 		"prd": "pm2 start"
 	},
 	"dependencies": {

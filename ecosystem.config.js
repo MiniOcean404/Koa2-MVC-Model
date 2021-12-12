@@ -22,16 +22,16 @@ module.exports = {
 		filter_env: ['REACT_'], // 排除以“REACT_”开头的全局变量，并且不允许它们渗透到集群中
 		env: {
 			NODE_ENV: 'production', // 环境参数，当前指定为生产环境
-			REMOTE_ADDR: '',
+			REMOTE_ADD: '',
 		},
 		env_dev: {
 			NODE_ENV: 'development', // 环境参数，当前指定为开发环境
-			REMOTE_ADDR: '',
+			REMOTE_ADD: '',
 		},
 		env_test: {
 			// 环境参数，当前指定为测试环境
 			NODE_ENV: 'test',
-			REMOTE_ADDR: '',
+			REMOTE_ADD: '',
 		},
 
 		error_file: './logs/app-err.log', // 错误日志文件

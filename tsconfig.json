@@ -15,7 +15,7 @@
 		// "declaration": true, // 生成相应的“.d.ts”文件,开启后会自动生成声明文件
 		// "declarationDir": "./dist/types", // 指定生成声明文件存放目录
 		"emitDeclarationOnly": false, // 只生成声明文件，而不会生成js文件
-		"typeRoots": ["./node_modules/@types","./src/types"], // 包含类型定义的文件夹列表。声明文件目录，默认是node_modules/@types,（会寻找包里的types字段声明或者index.d.ts文件）
+		"typeRoots": ["./node_modules/@types"], // 包含类型定义的文件夹列表。声明文件目录，默认是node_modules/@types,（会寻找包里的types字段声明或者index.d.ts文件）
 		// "rootDirs": [],                              // // 将多个目录放在一个虚拟目录下，用于运行时，即编译后引入文件的位置可能发生变化，这也设置可以虚拟src和out在同一个目录下，不用再去改变路径也不会报错
 
 		/* 模块输出配置 */

@@ -1,4 +1,13 @@
 const env = process.env.NODE_ENV
+const path = require('path')
+
+const resolve = (p) => {
+	if (env === 'production') {
+		path.join('dist', p)
+	} else {
+		return p
+	}
+}
 
 module.exports = {
 	type: 'mysql',
@@ -12,8 +21,8 @@ module.exports = {
 	logging: false,
 	multipleStatements: true,
 	dropSchema: false,
-	entities: ['dist/src/model/*.{ts,js}'],
+	entities: [resolve('src/model/*.{ts,js}')],
 	cli: {
-		entitiesDir: 'dist/src/model',
+		entitiesDir: resolve('src/model'),
 	},
 }
