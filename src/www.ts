@@ -2,11 +2,10 @@
 
 import { get_local_ip } from '@/common/utils'
 import http from 'http'
-import app from '../src/app'
+import app from './app'
 
-const port = normalizePort(process.env['PORT'] || '3000')
+const port = normalizePort(process.env['PORT'] || '80')
 
-// Create HTTP server.
 const server = http.createServer(app.callback())
 
 server.listen(port, () => {
@@ -21,7 +20,6 @@ function normalizePort(val: string) {
 	const port = parseInt(val, 10)
 	// named pipe
 	if (isNaN(port)) return val
-	// port number
 	if (port >= 0) return port
 	return false
 }
@@ -36,11 +34,13 @@ function onError(error: { syscall: string; code: string }) {
 
 	switch (error.code) {
 		case 'EACCES':
-			console.error(bind + ' 需要提升权限')
+			console.error(bind + ' (权限被拒绝):试图以文件访问权限禁止的方式访问文件')
 			process.exit(1)
 			break
 		case 'EADDRINUSE':
-			console.error(bind + ' 已在使用中')
+			console.error(
+				bind + '(地址已被使用):尝试将(net、http、或 https)绑定到本地地址失败，因为本地另一台服务器已经占用了该地址',
+			)
 			process.exit(1)
 			break
 		default:

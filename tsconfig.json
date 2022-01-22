@@ -1,12 +1,12 @@
 {
-	"include": ["src/**/*","bin/**/*"],
+	"include": ["./**/*"],
 	"exclude": [".idea","logs","public", "node_modules", "dist"],
 	"compileOnSave": true,
 	"compilerOptions": {
 		/* 基础配置 */
 		"target": "ESNEXT",
 		"module": "commonjs",
-		"allowJs": false,
+		"allowJs": true,
 		"checkJs": false,
 		"jsx": "preserve",
 		"strict": true,

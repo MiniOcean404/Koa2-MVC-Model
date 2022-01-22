@@ -1417,6 +1417,13 @@ latest-version@^5.1.0:
   dependencies:
     package-json "^6.3.0"
 
+locate-path@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.nlark.com/locate-path/download/locate-path-7.0.0.tgz#f0a60c8dd7ef0f737699eb9461b9567a92bc97da"
+  integrity sha1-8KYMjdfvD3N2meuUYblWepK8l9o=
+  dependencies:
+    p-locate "^6.0.0"
+
 lodash.includes@^4.3.0:
   version "4.3.0"
   resolved "https://registry.nlark.com/lodash.includes/download/lodash.includes-4.3.0.tgz#60bb98a87cb923c68ca1e51325483314849f553f"
@@ -1678,6 +1685,20 @@ p-cancelable@^2.0.0:
   version "2.1.1"
   resolved "https://registry.nlark.com/p-cancelable/download/p-cancelable-2.1.1.tgz#aab7fbd416582fa32a3db49859c122487c5ed2cf"
   integrity sha1-qrf71BZYL6MqPbSYWcEiSHxe0s8=
+
+p-limit@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.nlark.com/p-limit/download/p-limit-4.0.0.tgz?cache=0&sync_timestamp=1628812721654&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fp-limit%2Fdownload%2Fp-limit-4.0.0.tgz#914af6544ed32bfa54670b061cafcbd04984b644"
+  integrity sha1-kUr2VE7TK/pUZwsGHK/L0EmEtkQ=
+  dependencies:
+    yocto-queue "^1.0.0"
+
+p-locate@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.nlark.com/p-locate/download/p-locate-6.0.0.tgz#3da9a49d4934b901089dca3302fa65dc5a05c04f"
+  integrity sha1-PamknUk0uQEIncozAvpl3FoFwE8=
+  dependencies:
+    p-limit "^4.0.0"
 
 p-some@^4.0.0:
   version "4.1.0"
@@ -2414,6 +2435,11 @@ yn@3.1.1:
   version "3.1.1"
   resolved "https://registry.npmmirror.com/yn/download/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
   integrity sha1-HodAGgnXZ8HV6rJqbkwYUYLS61A=
+
+yocto-queue@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.nlark.com/yocto-queue/download/yocto-queue-1.0.0.tgz#7f816433fb2cbc511ec8bf7d263c3b58a1a3c251"
+  integrity sha1-f4FkM/ssvFEeyL99Jjw7WKGjwlE=
 
 zen-observable-ts@^1.0.0:
   version "1.1.0"
