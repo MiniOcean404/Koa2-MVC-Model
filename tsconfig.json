@@ -45,6 +45,7 @@
 		"listEmittedFiles": false, // 打印出编译后生成文件的名字。
 		"listFiles": false, // 打印编译的文件(包括引用的声明文件和库文件)
 
+		// 处理 ts-node 路径别名问题
 		"plugins": [
 			// 转换输出 js 文件中的路径
 			{ "transform": "typescript-transform-paths","exclude" : [  "**/node_modules/**"  ]},
@@ -52,6 +53,7 @@
 			{ "transform": "typescript-transform-paths", "afterDeclarations": true,"exclude" : [  "**/node_modules/**"  ]}
 		]
 	},
+	// ts-node . 会自动查找 package.json 文件中 main 入口为启动文件
 	"ts-node": {
 		"files": true,
 		"require" : [ "tsconfig-paths/register" ]
